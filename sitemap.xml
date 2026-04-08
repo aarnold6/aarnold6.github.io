@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Homepage — highest priority, most frequently updated -->
+  <url>
+    <loc>https://www.jarnoldcft.com/</loc>
+    <lastmod>2026-04-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Services — core offering page, high priority -->
+  <url>
+    <loc>https://www.jarnoldcft.com/pages/services.html</loc>
+    <lastmod>2026-04-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Scheduling & Pricing — high priority for conversion -->
+  <url>
+    <loc>https://www.jarnoldcft.com/pages/pricing.html</loc>
+    <lastmod>2026-04-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- What is CFT? — educational, good for search discovery -->
+  <url>
+    <loc>https://www.jarnoldcft.com/pages/what-is-cft.html</loc>
+    <lastmod>2026-04-03</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Bio — trust-building page -->
+  <url>
+    <loc>https://www.jarnoldcft.com/pages/bio.html</loc>
+    <lastmod>2026-04-03</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- FAQ — helpful for long-tail search queries -->
+  <url>
+    <loc>https://www.jarnoldcft.com/pages/faq.html</loc>
+    <lastmod>2026-04-03</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+</urlset>

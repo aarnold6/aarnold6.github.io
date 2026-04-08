@@ -1,0 +1,9 @@
+# robots.txt — Jacquelynn Arnold CFT
+# Instructs search engine crawlers what they may access.
+
+# Allow all well-behaved crawlers to access the full site
+User-agent: *
+Allow: /
+
+# Point crawlers to the sitemap
+Sitemap: https://www.jarnoldcft.com/sitemap.xml

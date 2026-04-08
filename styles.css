@@ -1,0 +1,512 @@
+/* =================================================================
+   SHARED STYLESHEET — Jacquelynn Arnold · Craniosacral Fascial Therapy
+   All pages link to this file.
+   Page-specific styles remain in each HTML file's <style> block.
+   ================================================================= */
+
+
+/* ── CSS Custom Properties ───────────────────────────────────────
+   To change a color site-wide, edit it here.
+   ---------------------------------------------------------------- */
+:root {
+  --teal-pale:   #C8E8F0;   /* lightest teal — backgrounds, hover states */
+  --teal-light:  #9DD0E0;   /* light teal — accents, gradients */
+  --teal-mid:    #6BAFC6;   /* mid teal — borders, dividers */
+  --teal-deep:   #3D8FA8;   /* main action color — buttons, links */
+  --teal-dark:   #22677E;   /* dark teal — headings, strong accents */
+  --cream:       #FDFAF6;   /* warm off-white — main background */
+  --off-white:   #F2F8FB;   /* cool off-white — alternate sections */
+  --text-dark:   #1B3540;   /* near-black — headings */
+  --text-mid:    #3C6070;   /* medium — body copy */
+  --text-light:  #6B8C99;   /* light — captions, labels */
+  --shadow-sm:   0 2px 16px rgba(61, 143, 168, 0.10);
+  --shadow-md:   0 6px 32px rgba(61, 143, 168, 0.14);
+  --shadow-lg:   0 16px 56px rgba(61, 143, 168, 0.18);
+  --radius:      4px;
+}
+
+
+/* ── Reset & Base ────────────────────────────────────────────── */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Jost', sans-serif;
+  font-weight: 400;          /* Updated: was 300 — better readability */
+  color: var(--text-dark);
+  background: var(--cream);
+  overflow-x: hidden;
+}
+
+
+/* ── Navigation ──────────────────────────────────────────────── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 200;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.1rem 2.5rem;
+  background: rgba(253, 250, 246, 0.90);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(107, 175, 198, 0.15);
+  transition: box-shadow 0.3s ease, padding 0.3s ease;
+}
+
+nav.scrolled {
+  box-shadow: var(--shadow-sm);
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.nav-brand {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--teal-dark);
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.nav-brand span {
+  font-weight: 300;
+  font-style: italic;
+  color: var(--text-mid);
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.75rem;
+  list-style: none;
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-size: 0.875rem;       /* Updated: was 0.72rem — improved readability */
+  font-weight: 500;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: var(--text-mid);
+  transition: color 0.25s ease;
+  white-space: nowrap;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--teal-deep);
+}
+
+/* Underline indicator for active nav link */
+.nav-links a.active {
+  position: relative;
+}
+.nav-links a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0; right: 0;
+  height: 2px;
+  background: var(--teal-deep);
+  border-radius: 1px;
+}
+
+.nav-cta {
+  background: var(--teal-deep) !important;
+  color: white !important;
+  padding: 0.45rem 1.1rem !important;
+  border-radius: var(--radius);
+  transition: background 0.25s ease !important;
+}
+.nav-cta:hover { background: var(--teal-dark) !important; }
+/* Don't show underline on the CTA button */
+.nav-cta.active::after { display: none; }
+
+/* Hamburger button — hidden on desktop */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 10px;                 /* Updated: was 4px — ensures 44x44px touch target */
+  min-width: 44px;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+}
+.nav-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--teal-dark);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+.nav-toggle.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-toggle.active span:nth-child(2) { opacity: 0; }
+.nav-toggle.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+
+/* ── Page Header (inner pages only) ─────────────────────────── */
+.page-header {
+  padding: 9rem 2rem 5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 80% 60% at 20% 50%, rgba(184, 228, 240, 0.5) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 70% at 80% 30%, rgba(107, 175, 198, 0.28) 0%, transparent 55%),
+    var(--cream);
+}
+
+.page-header-label {
+  font-size: 1rem;           /* Updated: was 0.7rem */
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--teal-deep);
+  margin-bottom: 0.75rem;
+  opacity: 0;
+  animation: fadeUp 0.8s ease 0.2s forwards;
+}
+
+.page-header h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.6rem, 6vw, 4.8rem);
+  font-weight: 300;
+  line-height: 1.1;
+  color: var(--text-dark);
+  margin-bottom: 1.25rem;
+  opacity: 0;
+  animation: fadeUp 0.8s ease 0.35s forwards;
+}
+
+.page-header h1 em {
+  font-style: italic;
+  color: var(--teal-dark);
+}
+
+.page-header p {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--text-mid);
+  line-height: 1.9;
+  max-width: 560px;
+  margin: 0 auto;
+  opacity: 0;
+  animation: fadeUp 0.8s ease 0.5s forwards;
+}
+
+.header-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
+  margin: 1.5rem 0;
+  opacity: 0;
+  animation: fadeUp 0.8s ease 0.45s forwards;
+}
+.header-divider-line { width: 100px; height: 3px; background: var(--teal-mid); }
+.header-divider-dot  { width: 8px; height: 8px; border-radius: 50%; background: var(--teal-mid); }
+
+
+/* ── Shared Section Styles ───────────────────────────────────── */
+.section        { padding: 5.5rem 2rem; }
+.section-alt    { background: var(--off-white); }
+
+.section-inner  {
+  max-width: 1000px;         /* Standardized: was 1100px on homepage, 1000px on subpages */
+  margin: 0 auto;
+}
+
+.section-label {
+  font-size: 1rem;           /* Updated: was 0.68rem — meets 16px readability standard */
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--teal-deep);
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+  font-weight: 400;
+  text-align: center;
+  color: var(--text-dark);
+  line-height: 1.2;
+  margin-bottom: 0.85rem;
+}
+
+.section-intro {
+  text-align: center;
+  max-width: 580px;
+  margin: 0 auto 3.5rem;
+  line-height: 1.9;
+  color: var(--text-mid);
+  font-size: 1rem;               /* Updated: was 0.95rem — base body copy size */
+}
+
+
+/* ── Scroll-Reveal Animation ─────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* ── Shared Buttons ──────────────────────────────────────────── */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--teal-deep);
+  color: white;
+  text-decoration: none;
+  padding: 0.9rem 2rem;
+  border-radius: var(--radius);
+  font-size: 0.875rem;           /* Updated: was 0.82rem */
+  font-weight: 500;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+.btn-primary:hover {
+  background: var(--teal-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border: 1.5px solid var(--teal-mid);
+  color: var(--teal-dark);
+  text-decoration: none;
+  padding: 0.9rem 2rem;
+  border-radius: var(--radius);
+  font-size: 0.875rem;           /* Updated: was 0.82rem */
+  font-weight: 500;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  background: transparent;
+}
+.btn-outline:hover {
+  background: var(--teal-pale);
+  border-color: var(--teal-deep);
+  transform: translateY(-2px);
+}
+
+.btn-white {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: white;
+  color: var(--teal-dark);
+  text-decoration: none;
+  padding: 0.9rem 2.2rem;
+  border-radius: var(--radius);
+  font-size: 0.875rem;           /* Updated: was 0.82rem */
+  font-weight: 500;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+.btn-white:hover {
+  background: var(--teal-pale);
+  transform: translateY(-2px);
+}
+
+.btn-outline-white {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border: 1.5px solid rgba(255, 255, 255, 0.45);
+  color: white;
+  text-decoration: none;
+  padding: 0.9rem 2.2rem;
+  border-radius: var(--radius);
+  font-size: 0.875rem;           /* Updated: was 0.82rem */
+  font-weight: 500;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  margin-left: 0.75rem;
+}
+.btn-outline-white:hover {
+  border-color: white;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+
+/* ── CTA Banner (used on inner pages) ───────────────────────── */
+.cta-banner {
+  background: var(--teal-dark);
+  color: white;
+  text-align: center;
+  padding: 4rem 2rem;
+}
+.cta-banner h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-weight: 400;
+  margin-bottom: 0.75rem;
+}
+.cta-banner p {
+  font-size: 1rem;               /* Updated: was 0.95rem */
+  color: rgba(255, 255, 255, 0.80);
+  margin-bottom: 2rem;
+  line-height: 1.8;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* ── Footer ──────────────────────────────────────────────────── */
+footer {
+  background: var(--text-dark);
+  color: rgba(255, 255, 255, 0.5);
+  padding: 3.5rem 2rem 2rem;
+}
+
+.footer-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.5rem;
+  padding-bottom: 2.5rem;
+}
+
+.footer-brand h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 0.6rem;
+}
+.footer-brand p {
+  font-size: 0.9rem;
+  line-height: 1.85;
+}
+
+.footer-col h4 { display: none; }
+.footer-col ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.4rem 1.5rem;
+}
+.footer-col ul li { margin-bottom: 0; }
+.footer-col ul li a {
+  color: rgba(255, 255, 255, 0.42);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
+}
+.footer-col ul li a:hover { color: rgba(255, 255, 255, 0.85); }
+
+.footer-affiliate {
+  display: inline-block;
+  color: rgba(255, 255, 255, 0.4);
+  text-decoration: none;
+  font-size: 0.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 0.3rem 0.75rem;
+  border-radius: 2px;
+  margin: 0.25rem 0.25rem 0 0;
+  transition: all 0.22s ease;
+}
+.footer-affiliate:hover {
+  color: rgba(255, 255, 255, 0.8);
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+.footer-bottom {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.875rem;           /* Updated: was 0.78rem */
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+.footer-bottom strong {
+  color: rgba(255, 255, 255, 0.65);
+  font-weight: 400;
+}
+
+
+/* ── Keyframe Animations ─────────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+
+/* ── Responsive — Tablet (max-width: 960px) ─────────────────── */
+/* ── Responsive — Tablet + iPad (max-width: 1024px) ─────────── */
+@media (max-width: 1024px) {
+  /* footer-inner is already a single centered column */
+
+  nav { padding: 1rem 1.25rem; }
+
+  /* Hamburger nav: hidden by default, drops down when .open is added */
+  .nav-links {
+    display: none;
+    position: fixed;
+    top: 62px; left: 0; right: 0;
+    flex-direction: column;
+    background: rgba(253, 250, 246, 0.97);
+    backdrop-filter: blur(14px);
+    padding: 1.5rem 2rem 2.5rem;
+    gap: 1.25rem;
+    border-bottom: 1px solid rgba(107, 175, 198, 0.18);
+    z-index: 199;
+  }
+  .nav-links.open { display: flex; }
+  .nav-toggle     { display: flex; }
+
+  /* Remove underline indicator — not needed in dropdown */
+  .nav-links a.active::after { display: none; }
+
+  /* Ensure nav links meet 44px touch target minimum */
+  .nav-links a {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+}
+
+
+/* ── Responsive — Mobile (max-width: 640px) ─────────────────── */
+@media (max-width: 640px) {
+  .section               { padding: 4rem 1.25rem; }
+  .footer-bottom         { flex-direction: column; text-align: center; }
+  .btn-outline-white     { margin-left: 0; margin-top: 0.75rem; }
+}

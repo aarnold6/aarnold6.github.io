@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CFT session pricing and scheduling with Jacquelynn Arnold in Clarkston, MI. Infant, child, and adult Craniosacral Fascial Therapy sessions — contact us to book.">
+  <link rel="canonical" href="https://www.jarnoldcft.com/pages/pricing.html">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Jacquelynn Arnold CFT">
+  <meta property="og:url" content="https://www.jarnoldcft.com/pages/pricing.html">
+  <meta property="og:title" content="CFT Scheduling & Pricing | Jacquelynn Arnold, Clarkston, MI">
+  <meta property="og:description" content="CFT session pricing and scheduling with Jacquelynn Arnold in Clarkston, MI. Infant, child, and adult Craniosacral Fascial Therapy sessions — contact us to book.">
+  <meta property="og:image" content="https://www.jarnoldcft.com/images/social-card.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CFT Scheduling & Pricing | Jacquelynn Arnold, Clarkston, MI">
+  <meta name="twitter:description" content="CFT session pricing and scheduling with Jacquelynn Arnold in Clarkston, MI. Infant, child, and adult Craniosacral Fascial Therapy sessions — contact us to book.">
+  <meta name="twitter:image" content="https://www.jarnoldcft.com/images/social-card.jpg">
+  <title>CFT Scheduling & Pricing | Jacquelynn Arnold, Clarkston, MI</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    /* Page-specific styles only — shared styles are in ../styles.css */
+
+    /* ── Pricing Cards ── */
+    .pricing-grid { display:grid; grid-template-columns:1fr 1fr; gap:2rem; max-width:760px; margin:0 auto; }
+    .pricing-card {
+      background:white; border:1px solid rgba(107,175,198,0.2); border-radius:var(--radius);
+      padding:3rem 2.5rem; box-shadow:var(--shadow-sm); text-align:center;
+      transition:transform 0.3s ease, box-shadow 0.3s ease; position:relative;
+    }
+    .pricing-card:hover { transform:translateY(-5px); box-shadow:var(--shadow-md); }
+
+    /* ── Payment Info Box ── */
+    .payment-info-box {
+      background:rgba(200,232,240,0.25); border:1px solid rgba(107,175,198,0.22);
+      border-radius:var(--radius); padding:1.5rem 2rem; max-width:760px; margin:2rem auto 0;
+      font-size:0.85rem; color:var(--text-mid); line-height:1.85; text-align:center;
+    }
+    .payment-info-box strong { color:var(--teal-dark); font-weight:500; }
+    .pricing-icon { font-size:2rem; margin-bottom:1rem; }
+    .pricing-who { font-family:'Cormorant Garamond',serif; font-size:1.75rem; font-weight:600; color:var(--text-dark); margin-bottom:0.25rem; }
+    .pricing-duration { font-size:0.7rem; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-light); margin-bottom:2rem; }
+    .pricing-row { display:flex; justify-content:space-between; align-items:baseline; padding:0.85rem 0; border-bottom:1px solid rgba(107,175,198,0.12); }
+    .pricing-row:last-of-type { border-bottom:none; }
+    .pricing-row-label { color:var(--text-mid); font-size:0.88rem; font-weight:300; text-align:left; }
+    .pricing-row-price { font-family:'Cormorant Garamond',serif; font-size:1.6rem; font-weight:600; color:var(--teal-dark); }
+
+    /* ── Sibling note ── */
+    .pricing-note-box {
+      background:rgba(200,232,240,0.3); border:1px solid rgba(107,175,198,0.22);
+      border-radius:var(--radius); padding:1.5rem 2rem; max-width:760px; margin:2rem auto 0;
+      font-size:0.85rem; color:var(--text-mid); line-height:1.8; text-align:center;
+    }
+    .pricing-note-box strong { color:var(--teal-dark); font-weight:500; }
+
+    /* ── How to Book ── */
+    .steps-horiz { display:grid; grid-template-columns:repeat(3,1fr); gap:2rem; }
+    .step-card {
+      background:white; border:1px solid rgba(107,175,198,0.18);
+      border-radius:var(--radius); padding:2rem 1.75rem; box-shadow:var(--shadow-sm); text-align:center;
+    }
+    .step-num { font-family:'Cormorant Garamond',serif; font-size:3.5rem; font-weight:300; color:var(--teal-pale); line-height:1; margin-bottom:0.75rem; }
+    .step-card h3 { font-family:'Cormorant Garamond',serif; font-size:1.3rem; font-weight:600; color:var(--text-dark); margin-bottom:0.5rem; }
+    .step-card p  { font-size:0.85rem; color:var(--text-mid); line-height:1.75; }
+
+    /* ── Cancellation policy ── */
+    .policy-block {
+      background:white; border:1px solid rgba(107,175,198,0.18); border-radius:var(--radius);
+      padding:2.5rem 3rem; box-shadow:var(--shadow-sm); max-width:700px; margin:0 auto;
+    }
+    .policy-block h3 { font-family:'Cormorant Garamond',serif; font-size:1.5rem; font-weight:600; color:var(--teal-dark); margin-bottom:1.25rem; }
+    .policy-block p  { font-size:0.9rem; line-height:1.9; color:var(--text-mid); margin-bottom:0.85rem; }
+    .policy-block p:last-child { margin-bottom:0; }
+
+    /* .cta-banner, .btn-white, .btn-outline-white, footer, @keyframes are in ../styles.css */
+
+    /* ── Page-specific responsive ── */
+    @media(max-width:960px) {
+      .pricing-grid { grid-template-columns:1fr; max-width:420px; }
+      .steps-horiz  { grid-template-columns:1fr; }
+    }
+    @media(max-width:640px) {
+      .policy-block { padding:2rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav id="navbar">
+    <a href="../index.html" class="nav-brand">Jacquelynn Arnold <span>· RN, BSN</span></a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="what-is-cft.html">What is CFT?</a></li>
+      <li><a href="bio.html">Bio</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="pricing.html">Scheduling &amp; Pricing</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="../index.html#contact" class="nav-cta">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <header class="page-header">
+    <p class="page-header-label">Sessions &amp; Rates</p>
+    <h1>Scheduling <em>&amp; Pricing</em></h1>
+    <div class="header-divider">
+      <div class="header-divider-line"></div>
+      <div class="header-divider-dot"></div>
+      <div class="header-divider-line"></div>
+    </div>
+    <p>
+      Straightforward pricing for all ages. Reach out directly
+      to check availability and schedule your first session.
+    </p>
+  </header>
+
+  <!-- Pricing -->
+  <section class="section" id="rates">
+    <div class="section-inner">
+      <p class="section-label reveal">Session Rates</p>
+      <h2 class="section-title reveal">Pricing</h2>
+      <p class="section-intro reveal">
+        First sessions include an intake consultation. All sessions are provided
+        in-person in the Clarkston, MI area. In-home appointments are available — fees apply and on a limited basis.
+      </p>
+
+      <div class="pricing-grid">
+        <div class="pricing-card reveal">
+          <div class="pricing-icon">🌳</div>
+          <div class="pricing-who">Adults</div>
+          <div class="pricing-duration">approx 60 minutes</div>
+          <div class="pricing-row">
+            <span class="pricing-row-label">First Session</span>
+            <span class="pricing-row-price">$120</span>
+          </div>
+          <div class="pricing-row">
+            <span class="pricing-row-label">Follow-Up Sessions</span>
+            <span class="pricing-row-price">$100</span>
+          </div>
+        </div>
+
+        <div class="pricing-card reveal">
+          <div class="pricing-icon">🌱 🌿</div>
+          <div class="pricing-who">Kids &amp; Infants</div>
+          <div class="pricing-duration">30 or 60 Minutes</div>
+          <div class="pricing-row">
+            <span class="pricing-row-label">First Session</span>
+            <span class="pricing-row-price">$100</span>
+          </div>
+          <div class="pricing-row">
+            <span class="pricing-row-label">60-Minute Session</span>
+            <span class="pricing-row-price">$100</span>
+          </div>
+          <div class="pricing-row">
+            <span class="pricing-row-label">30-Minute Session</span>
+            <span class="pricing-row-price">$50</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pricing-note-box reveal">
+        <strong>Siblings:</strong> Each additional sibling seen in the same visit is billed at
+        the standard session rate — no additional first-session fee per child.
+      </div>
+
+      <div class="payment-info-box reveal">
+        Pricing is based on cash payment. Unfortunately, credit cards and insurance are
+        <strong>NOT</strong> accepted. Receipts available upon request.
+      </div>
+    </div>
+  </section>
+
+  <!-- How to Schedule -->
+  <section class="section section-alt" id="schedule">
+    <div class="section-inner">
+      <p class="section-label reveal">Booking</p>
+      <h2 class="section-title reveal">How to Schedule</h2>
+      <p class="section-intro reveal">
+        Scheduling is simple — reach out directly by email and Jacquelynn will
+        get back to confirm availability and session details.
+      </p>
+
+      <div class="steps-horiz">
+        <div class="step-card reveal">
+          <div class="step-num">01</div>
+          <h3>Reach Out</h3>
+          <p>
+            Send an email to <a href="mailto:J.ArnoldCFT@gmail.com" style="color:var(--teal-deep);">J.ArnoldCFT@gmail.com</a> with
+            your name, who the session is for, and a brief description of what brings you in.
+          </p>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-num">02</div>
+          <h3>Confirm Details</h3>
+          <p>
+            Jacquelynn will respond to confirm availability, session location, and answer
+            any questions you have before your visit.
+          </p>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-num">03</div>
+          <h3>Complete Forms</h3>
+          <p>
+            First-time clients will be emailed consent and intake forms in advance —
+            this helps make your first session as efficient as possible.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cancellation Policy -->
+  <section class="section" id="policy">
+    <div class="section-inner">
+      <p class="section-label reveal" style="text-align:center;">Policy</p>
+      <h2 class="section-title reveal">Cancellation Policy</h2>
+      <p class="section-intro reveal">
+        Please review the cancellation policy before booking your first session.
+      </p>
+      <div class="policy-block reveal">
+        <h3>Cancellations &amp; Rescheduling</h3>
+        <p>
+          Life happens — and flexibility is understood, especially for families with
+          young children. If you need to cancel or reschedule, please reach out as
+          early as possible so the time can be offered to another client.
+        </p>
+        <p>
+          A specific cancellation window and any associated fees will be communicated
+          when your appointment is confirmed. Questions about the policy can be directed
+          to <a href="mailto:J.ArnoldCFT@gmail.com" style="color:var(--teal-deep);">J.ArnoldCFT@gmail.com</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-banner">
+    <h2>Ready to Book?</h2>
+    <p>Send an email to get started — Jacquelynn will respond promptly to confirm your session.</p>
+    <a href="../index.html#contact" class="btn-white">Book a Session &rarr;</a>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <h3>Jacquelynn Arnold RN, BSN</h3>
+        <p>Craniosacral Fascial Therapy<br>Clarkston, MI<br>J.ArnoldCFT@gmail.com</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="what-is-cft.html">What is CFT?</a></li>
+          <li><a href="bio.html">Bio</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="pricing.html">Scheduling &amp; Pricing</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="yr"></span> <strong>Jacquelynn Arnold RN, BSN · Craniosacral Fascial Therapy</strong></span>
+      <span>Clarkston, MI</span>
+    </div>
+  </footer>
+
+  <script src="../main.js" defer></script>
+</body>
+</html>

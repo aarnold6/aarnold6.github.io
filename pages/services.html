@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CFT sessions for infants, children, and adults in Clarkston, MI. Jacquelynn Arnold offers Craniosacral Fascial Therapy for colic, oral ties, chronic pain, migraines, and more.">
+  <link rel="canonical" href="https://www.jarnoldcft.com/pages/services.html">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Jacquelynn Arnold CFT">
+  <meta property="og:url" content="https://www.jarnoldcft.com/pages/services.html">
+  <meta property="og:title" content="CFT Services for Infants, Children & Adults | Clarkston, MI">
+  <meta property="og:description" content="CFT sessions for infants, children, and adults in Clarkston, MI. Jacquelynn Arnold offers Craniosacral Fascial Therapy for colic, oral ties, chronic pain, migraines, and more.">
+  <meta property="og:image" content="https://www.jarnoldcft.com/images/social-card.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CFT Services for Infants, Children & Adults | Clarkston, MI">
+  <meta name="twitter:description" content="CFT sessions for infants, children, and adults in Clarkston, MI. Jacquelynn Arnold offers Craniosacral Fascial Therapy for colic, oral ties, chronic pain, migraines, and more.">
+  <meta name="twitter:image" content="https://www.jarnoldcft.com/images/social-card.jpg">
+  <title>CFT Services for Infants, Children & Adults | Clarkston, MI</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    /* Page-specific styles only — shared styles are in ../styles.css */
+
+    /* ── Service Cards ── */
+    .service-cards { display:flex; flex-direction:column; gap:3rem; }
+    .service-card {
+      display:grid; grid-template-columns:200px 1fr; gap:3rem;
+      background:white; border:1px solid rgba(107,175,198,0.18);
+      border-radius:var(--radius); padding:2.75rem; box-shadow:var(--shadow-sm);
+      align-items:start; transition:box-shadow 0.3s ease;
+    }
+    .service-card:hover { box-shadow:var(--shadow-md); }
+    .service-card-icon-col { text-align:center; }
+    .service-icon { font-size:3rem; margin-bottom:0.75rem; display:block; }
+    .service-label { font-size:0.68rem; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; color:var(--teal-deep); }
+    .service-card h2 { font-family:'Cormorant Garamond',serif; font-size:1.9rem; font-weight:400; color:var(--text-dark); margin-bottom:0.75rem; }
+    .service-card p  { font-size:0.9rem; line-height:1.95; color:var(--text-mid); margin-bottom:1rem; }
+    .service-card p:last-of-type { margin-bottom:0; }
+    .service-tags { display:flex; flex-wrap:wrap; gap:0.45rem; margin-top:1.25rem; }
+    .service-tag {
+      background:var(--off-white); border:1px solid rgba(107,175,198,0.28);
+      color:var(--text-mid); padding:0.32rem 0.8rem; border-radius:100px;
+      font-size:0.76rem; font-weight:400;
+    }
+
+    /* ── What to Bring ── */
+    .prep-grid { display:grid; grid-template-columns:1fr 1fr; gap:2rem; }
+    .prep-card {
+      background:white; border:1px solid rgba(107,175,198,0.18);
+      border-radius:var(--radius); padding:2rem 1.75rem; box-shadow:var(--shadow-sm);
+    }
+    .prep-card h3 { font-family:'Cormorant Garamond',serif; font-size:1.35rem; font-weight:600; color:var(--teal-dark); margin-bottom:1rem; }
+    .prep-card ul { list-style:none; display:flex; flex-direction:column; gap:0.6rem; }
+    .prep-card ul li { font-size:0.88rem; color:var(--text-mid); line-height:1.6; display:flex; align-items:baseline; gap:0.65rem; }
+    .prep-card ul li::before { content:'✦'; color:var(--teal-mid); font-size:0.6rem; flex-shrink:0; }
+
+    /* ── FAQ ── */
+    .faq { display:flex; flex-direction:column; gap:0; }
+    .faq-item { border-bottom:1px solid rgba(107,175,198,0.15); }
+    .faq-item:first-child { border-top:1px solid rgba(107,175,198,0.15); }
+    .faq-q {
+      width:100%; background:none; border:none; text-align:left;
+      padding:1.25rem 0; display:flex; justify-content:space-between; align-items:center;
+      cursor:pointer; font-family:'Cormorant Garamond',serif; font-size:1.2rem;
+      font-weight:500; color:var(--text-dark); transition:color 0.25s ease;
+    }
+    .faq-q:hover { color:var(--teal-deep); }
+    .faq-icon { font-size:1.2rem; color:var(--teal-mid); transition:transform 0.3s ease; flex-shrink:0; margin-left:1rem; }
+    .faq-item.open .faq-icon { transform:rotate(45deg); }
+    .faq-a { max-height:0; overflow:hidden; transition:max-height 0.4s ease, padding 0.3s ease; }
+    .faq-a p { font-size:0.9rem; line-height:1.9; color:var(--text-mid); padding-bottom:1.25rem; }
+    .faq-item.open .faq-a { max-height:400px; }
+
+    /* .cta-banner, .btn-white, .btn-outline-white, footer, @keyframes are in ../styles.css */
+
+    /* ── Page-specific responsive ── */
+    @media(max-width:960px) {
+      .service-card { grid-template-columns:1fr; gap:1.5rem; }
+      .service-card-icon-col { display:flex; align-items:center; gap:1rem; text-align:left; }
+      .service-icon { margin-bottom:0; font-size:2rem; }
+      .prep-grid { grid-template-columns:1fr; }
+    }
+    @media(max-width:640px) {
+      .service-card { padding:2rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav id="navbar">
+    <a href="../index.html" class="nav-brand">Jacquelynn Arnold <span>· RN, BSN</span></a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="what-is-cft.html">What is CFT?</a></li>
+      <li><a href="bio.html">Bio</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="pricing.html">Scheduling &amp; Pricing</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="../index.html#contact" class="nav-cta">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <header class="page-header">
+    <p class="page-header-label">What Jacquelynn Offers</p>
+    <h1>CFT <em>Services</em></h1>
+    <div class="header-divider">
+      <div class="header-divider-line"></div>
+      <div class="header-divider-dot"></div>
+      <div class="header-divider-line"></div>
+    </div>
+    <p>
+      All sessions are rooted in the Gillespie Approach — gentle, hands-on CFT
+      tailored to each client's age, history, and needs.
+    </p>
+  </header>
+
+  <!-- Service offerings -->
+  <section class="section" id="offerings">
+    <div class="section-inner">
+      <p class="section-label reveal">Sessions</p>
+      <h2 class="section-title reveal">CFT for Every Stage of Life</h2>
+      <p class="section-intro reveal">
+        Craniosacral Fascial Therapy is effective across all ages. Each session is
+        individualized — no two bodies unwind the same way.
+      </p>
+
+      <div class="service-cards">
+
+        <!-- Infants -->
+        <div class="service-card reveal">
+          <div class="service-card-icon-col">
+            <span class="service-icon">🌱</span>
+            <span class="service-label">Newborns &amp; Infants</span>
+          </div>
+          <div>
+            <h2>Infant CFT Session</h2>
+            <p>
+              Infant sessions are gentle, nurturing, and performed while the baby is held,
+              lying on a comfortable surface, or nursing — whatever keeps them most at ease.
+              Jacquelynn uses an extremely light touch to assess and address fascial strain
+              patterns that may have developed during pregnancy or birth.
+            </p>
+            <p>
+              Many parents notice changes in feeding, sleep, comfort, and temperament
+              within a session or shortly after. CFT is safe for newborns and can be
+              started as early as the first days of life.
+            </p>
+            <div class="service-tags">
+              <span class="service-tag">Reflux &amp; colic</span>
+              <span class="service-tag">Oral ties</span>
+              <span class="service-tag">Torticollis</span>
+              <span class="service-tag">Feeding difficulties</span>
+              <span class="service-tag">Birth trauma</span>
+              <span class="service-tag">Plagiocephaly</span>
+              <span class="service-tag">Sleep support</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Children -->
+        <div class="service-card reveal">
+          <div class="service-card-icon-col">
+            <span class="service-icon">🌿</span>
+            <span class="service-label">Children</span>
+          </div>
+          <div>
+            <h2>Children's CFT Session</h2>
+            <p>
+              Children's sessions are adapted to be calm, comfortable, and engaging.
+              Jacquelynn works with the child's natural rhythm and comfort level.
+              Sessions for children address accumulated strain from birth, falls, illness,
+              and the physical and emotional demands of growing up.
+            </p>
+            <p>
+              CFT can support children through developmental milestones, behavioral
+              challenges, and physical discomfort — complementing, not replacing,
+              other forms of care.
+            </p>
+            <div class="service-tags">
+              <span class="service-tag">Developmental delays</span>
+              <span class="service-tag">ADHD / ADD</span>
+              <span class="service-tag">Sleep issues</span>
+              <span class="service-tag">Anxiety</span>
+              <span class="service-tag">Sensory sensitivities</span>
+              <span class="service-tag">Headaches</span>
+              <span class="service-tag">Nervous system support</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Adults -->
+        <div class="service-card reveal">
+          <div class="service-card-icon-col">
+            <span class="service-icon">🌳</span>
+            <span class="service-label">Adults</span>
+          </div>
+          <div>
+            <h2>Adult CFT Session</h2>
+            <p>
+              Adult sessions are performed fully clothed on a comfortable table.
+              Jacquelynn listens to the body's craniosacral fascial rhythm and follows
+              the tissues as they unwind — addressing layers of strain that may have
+              accumulated over years or decades.
+            </p>
+            <p>
+              Sessions are deeply relaxing and often leave clients feeling lighter,
+              more mobile, and better regulated. The number of sessions needed varies
+              by individual, and Jacquelynn will discuss this with you after your first visit.
+            </p>
+            <div class="service-tags">
+              <span class="service-tag">Chronic pain</span>
+              <span class="service-tag">Migraines</span>
+              <span class="service-tag">TMJ / jaw pain</span>
+              <span class="service-tag">Anxiety &amp; depression</span>
+              <span class="service-tag">Pelvic pain</span>
+              <span class="service-tag">Trauma recovery</span>
+              <span class="service-tag">Nervous system regulation</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Preparation -->
+  <section class="section section-alt" id="prepare">
+    <div class="section-inner">
+      <p class="section-label reveal">Before Your Visit</p>
+      <h2 class="section-title reveal">What to Know &amp; Bring</h2>
+      <p class="section-intro reveal">
+        A little preparation helps make your first session as smooth as possible.
+      </p>
+      <div class="prep-grid">
+        <div class="prep-card reveal">
+          <h3>For Adult Sessions</h3>
+          <ul>
+            <li>Wear comfortable, loose-fitting clothing</li>
+            <li>Complete the first-visit intake form in advance if possible</li>
+            <li>Arrive a few minutes early to settle in</li>
+            <li>Avoid heavy meals immediately before the session</li>
+            <li>Bring a list of any current medications or supplements</li>
+            <li>Note any recent injuries, surgeries, or health changes</li>
+          </ul>
+        </div>
+        <div class="prep-card reveal">
+          <h3>For Infant &amp; Child Sessions</h3>
+          <ul>
+            <li>Bring your child's comfort item (pacifier, toy, blanket)</li>
+            <li>For infants: bring a change of clothes and feeding supplies</li>
+            <li>Schedule the session around a natural feeding/nap window</li>
+            <li>Complete the intake form for your child in advance</li>
+            <li>Note any birth history details you feel are relevant</li>
+            <li>A parent or guardian must be present for all minor sessions</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-banner">
+    <h2>Ready to Schedule?</h2>
+    <p>View pricing details, browse the FAQ, or reach out directly to book a session.</p>
+    <a href="pricing.html" class="btn-white">View Pricing &rarr;</a>
+    <a href="../index.html#contact" class="btn-outline-white">Book a Session</a>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <h3>Jacquelynn Arnold RN, BSN</h3>
+        <p>Craniosacral Fascial Therapy<br>Clarkston, MI<br>J.ArnoldCFT@gmail.com</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="what-is-cft.html">What is CFT?</a></li>
+          <li><a href="bio.html">Bio</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="pricing.html">Scheduling &amp; Pricing</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="yr"></span> <strong>Jacquelynn Arnold RN, BSN · Craniosacral Fascial Therapy</strong></span>
+      <span>Clarkston, MI</span>
+    </div>
+  </footer>
+
+  <script src="../main.js" defer></script>
+  <script>
+    // FAQ accordion (page-specific)
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('.faq-q').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          var item = btn.parentElement;
+          var isOpen = item.classList.contains('open');
+          document.querySelectorAll('.faq-item').forEach(function(i) { i.classList.remove('open'); });
+          if (!isOpen) item.classList.add('open');
+        });
+      });
+    });
+  </script>
+</body>
+</html>

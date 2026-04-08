@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find /Users/andrewarnold/Claude-work/CFT-website -name frontend-design* -o -name *.md)",
+      "Bash(mkdir -p /Users/andrewarnold/Claude-work/CFT-website/.claude/skills)",
+      "Bash(mv /Users/andrewarnold/Claude-work/CFT-website/SKILL.md /Users/andrewarnold/Claude-work/CFT-website/.claude/skills/frontend-design.md)"
+    ]
+  }
+}
