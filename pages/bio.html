@@ -70,7 +70,7 @@
       background:white; border:1px solid rgba(107,175,198,0.18);
       border-radius:var(--radius); padding:1.75rem 1.5rem; box-shadow:var(--shadow-sm); text-align:center;
     }
-    .cred-icon { font-size:1.6rem; margin-bottom:0.75rem; }
+    .cred-icon { display:flex; justify-content:center; margin-bottom:0.75rem; }
     .cred-card h3 { font-family:'Cormorant Garamond',serif; font-size:1.25rem; font-weight:600; color:var(--text-dark); margin-bottom:0.35rem; }
     .cred-card p  { font-size:0.875rem; color:var(--text-light); line-height:1.6; }
 
@@ -208,17 +208,29 @@
       <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.9rem,3.5vw,2.8rem);font-weight:400;text-align:center;color:var(--text-dark);line-height:1.2;margin-bottom:3rem;" class="reveal">Credentials</h2>
       <div class="cred-grid">
         <div class="cred-card reveal">
-          <div class="cred-icon">🎓</div>
+          <div class="cred-icon">
+            <svg style="width:1.75rem;height:1.75rem;color:var(--teal-deep);" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 3.741-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" />
+            </svg>
+          </div>
           <h3>Registered Nurse</h3>
           <p>RN, BSN — over a decade of clinical nursing experience</p>
         </div>
         <div class="cred-card reveal">
-          <div class="cred-icon">📚</div>
+          <div class="cred-icon">
+            <svg style="width:1.75rem;height:1.75rem;color:var(--teal-deep);" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" />
+            </svg>
+          </div>
           <h3>Human Development</h3>
           <p>Second degree in Human Development &amp; Family Studies</p>
         </div>
         <div class="cred-card reveal">
-          <div class="cred-icon">✦</div>
+          <div class="cred-icon">
+            <svg style="width:1.75rem;height:1.75rem;color:var(--teal-deep);" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z" />
+            </svg>
+          </div>
           <h3>Gillespie Approach CFT</h3>
           <p>Completed Gillespie Approach Craniosacral Fascial Therapy training, 2023</p>
         </div>
@@ -241,15 +253,7 @@
       <div class="footer-top">
         <div class="footer-brand">
           <h3>Jacquelynn Arnold RN, BSN</h3>
-          <p>Craniosacral Fascial Therapy<br>Clarkston, MI<br>J.ArnoldCFT@gmail.com</p>
-        </div>
-        <div class="footer-map">
-          <iframe
-            src="https://maps.google.com/maps?q=Clarkston,Michigan&t=&z=13&ie=UTF8&iwloc=&output=embed"
-            title="Clarkston, MI — service area map"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            aria-label="Map showing Clarkston, Michigan"></iframe>
+          <p>Craniosacral Fascial Therapy<br><a href="https://maps.google.com/?q=Clarkston,Michigan" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:underline;text-underline-offset:3px;opacity:0.85;">Clarkston, MI</a><br>J.ArnoldCFT@gmail.com</p>
         </div>
       </div>
       <div class="footer-col">
