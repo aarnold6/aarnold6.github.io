@@ -777,6 +777,20 @@
       justify-content: center;
       gap: 0.4rem;
     }
+    .contact-hint {
+      margin-top: 1.25rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid rgba(107, 175, 198, 0.15);
+      font-size: 0.83rem;
+      color: var(--text-light);
+      line-height: 1.75;
+    }
+    .contact-hint a {
+      color: var(--teal-deep);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .contact-hint a:hover { text-decoration: underline; }
 
 
     /* Footer, @keyframes fadeUp, and shared responsive rules are in styles.css */
@@ -1382,8 +1396,9 @@
       <div class="contact-card reveal">
         <p class="contact-greeting">Let's get started</p>
         <p class="contact-subtext">
-          Send an email to schedule a session or ask any questions.
-          Jacquelynn will get back to you promptly.
+          Jacquelynn personally reads and responds to every email — typically
+          within 1–2 business days. Whether you're ready to book or just have
+          questions, don't hesitate to reach out.
         </p>
 
         <div class="contact-methods">
@@ -1393,6 +1408,12 @@
             <span>J.ArnoldCFT@gmail.com</span>
           </a>
         </div>
+
+        <p class="contact-hint">
+          Feel free to share a bit about your situation, your child's age, or
+          whatever is on your mind — no question is too small.
+          New to CFT? <a href="pages/faq.html">The FAQ is a great place to start &rarr;</a>
+        </p>
       </div>
 
     </div>
@@ -1408,17 +1429,27 @@
   <footer>
     <div class="footer-inner">
 
-      <!-- Brand column -->
-      <div class="footer-brand">
-        <h3>Jacquelynn Arnold RN, BSN</h3>
-        <p>
-          Craniosacral Fascial Therapy<br>
-          Clarkston, MI<br>
-          J.ArnoldCFT@gmail.com
-        </p>
+      <!-- Row 1: Brand info + Map side by side -->
+      <div class="footer-top">
+        <div class="footer-brand">
+          <h3>Jacquelynn Arnold RN, BSN</h3>
+          <p>
+            Craniosacral Fascial Therapy<br>
+            Clarkston, MI<br>
+            J.ArnoldCFT@gmail.com
+          </p>
+        </div>
+        <div class="footer-map">
+          <iframe
+            src="https://maps.google.com/maps?q=Clarkston,Michigan&t=&z=13&ie=UTF8&iwloc=&output=embed"
+            title="Clarkston, MI — service area map"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            aria-label="Map showing Clarkston, Michigan"></iframe>
+        </div>
       </div>
 
-      <!-- Navigation column -->
+      <!-- Row 2: Navigation links centered -->
       <div class="footer-col">
         <h4>Navigation</h4>
         <ul>
@@ -1431,7 +1462,6 @@
           <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
-
 
     </div>
 

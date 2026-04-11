@@ -395,8 +395,38 @@ footer {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 1.5rem;
+  gap: 2rem;
   padding-bottom: 2.5rem;
+}
+
+/* Row 1: brand info on left, map on right */
+.footer-top {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+}
+.footer-top .footer-brand {
+  text-align: left;
+}
+
+.footer-map {
+  flex-shrink: 0;
+}
+.footer-map iframe {
+  display: block;
+  width: 240px;
+  height: 170px;
+  border: none;
+  border-radius: var(--radius);
+  opacity: 0.65;
+  filter: grayscale(25%);
+  transition: opacity 0.25s ease, filter 0.25s ease;
+}
+.footer-map iframe:hover {
+  opacity: 1;
+  filter: none;
 }
 
 .footer-brand h3 {
@@ -472,7 +502,12 @@ footer {
 /* ── Responsive — Tablet (max-width: 960px) ─────────────────── */
 /* ── Responsive — Tablet + iPad (max-width: 1024px) ─────────── */
 @media (max-width: 1024px) {
-  /* footer-inner is already a single centered column */
+  .footer-top {
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer-top .footer-brand { text-align: center; }
+  .footer-map iframe { width: 260px; height: 180px; }
 
   nav { padding: 1rem 1.25rem; }
 
