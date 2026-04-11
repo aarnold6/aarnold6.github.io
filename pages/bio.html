@@ -50,7 +50,7 @@
 
     /* Credentials badge */
     .credentials {
-      font-size:0.7rem; font-weight:600; letter-spacing:0.2em; text-transform:uppercase;
+      font-size:0.75rem; font-weight:600; letter-spacing:0.2em; text-transform:uppercase;
       color:var(--teal-deep); margin-bottom:0.5rem;
     }
     .bio-text h2 { font-family:'Cormorant Garamond',serif; font-size:clamp(2rem,3.5vw,2.8rem); font-weight:400; color:var(--text-dark); line-height:1.2; margin-bottom:1.75rem; }
@@ -99,6 +99,8 @@
 </head>
 <body>
 
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
   <nav id="navbar">
     <a href="../index.html" class="nav-brand">Jacquelynn Arnold <span>· RN, BSN</span></a>
     <ul class="nav-links" id="nav-links">
@@ -110,13 +112,13 @@
       <li><a href="faq.html">FAQ</a></li>
       <li><a href="../index.html#contact" class="nav-cta">Contact</a></li>
     </ul>
-    <button class="nav-toggle" id="nav-toggle" aria-label="Open menu">
+    <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
       <span></span><span></span><span></span>
     </button>
   </nav>
 
   <!-- Page Header -->
-  <header class="page-header">
+  <header class="page-header" id="main-content">
     <p class="page-header-label">About Jacquelynn</p>
     <h1>A Journey to <em>Whole-Body<br>Healing</em></h1>
     <div class="header-divider">

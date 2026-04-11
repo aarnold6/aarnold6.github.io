@@ -33,14 +33,18 @@ var navLinks  = document.getElementById('nav-links');
 
 if (navToggle && navLinks) {
   navToggle.addEventListener('click', function() {
-    navLinks.classList.toggle('open');
+    var isOpen = navLinks.classList.toggle('open');
     navToggle.classList.toggle('active');
+    navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    navToggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
   });
   // Close the menu when any nav link is clicked
   navLinks.querySelectorAll('a').forEach(function(link) {
     link.addEventListener('click', function() {
       navLinks.classList.remove('open');
       navToggle.classList.remove('active');
+      navToggle.setAttribute('aria-expanded', 'false');
+      navToggle.setAttribute('aria-label', 'Open menu');
     });
   });
 }

@@ -18,7 +18,7 @@
   --off-white:   #F2F8FB;   /* cool off-white — alternate sections */
   --text-dark:   #1B3540;   /* near-black — headings */
   --text-mid:    #3C6070;   /* medium — body copy */
-  --text-light:  #6B8C99;   /* light — captions, labels */
+  --text-light:  #4A6B78;   /* light — captions, labels — darkened for WCAG AA (≥4.5:1 on cream) */
   --shadow-sm:   0 2px 16px rgba(61, 143, 168, 0.10);
   --shadow-md:   0 6px 32px rgba(61, 143, 168, 0.14);
   --shadow-lg:   0 16px 56px rgba(61, 143, 168, 0.18);
@@ -421,7 +421,7 @@ footer {
 }
 .footer-col ul li { margin-bottom: 0; }
 .footer-col ul li a {
-  color: rgba(255, 255, 255, 0.42);
+  color: rgba(255, 255, 255, 0.65); /* raised from 0.42 — WCAG AA on dark bg */
   text-decoration: none;
   font-size: 0.9rem;
   transition: color 0.2s ease;
@@ -509,4 +509,54 @@ footer {
   .section               { padding: 4rem 1.25rem; }
   .footer-bottom         { flex-direction: column; text-align: center; }
   .btn-outline-white     { margin-left: 0; margin-top: 0.75rem; }
+}
+
+
+/* ── Skip Navigation Link ────────────────────────────────────── */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 1rem;
+  background: var(--teal-deep);
+  color: white;
+  padding: 0.5rem 1.1rem;
+  border-radius: var(--radius);
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+  z-index: 9999;
+  transition: top 0.2s ease;
+}
+.skip-link:focus {
+  top: 1rem;
+  outline: 2px solid white;
+  outline-offset: 2px;
+}
+
+
+/* ── Focus Styles ────────────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid var(--teal-deep);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+
+/* ── Reduced Motion ──────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  /* Ensure reveal elements are visible without animation */
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
 }

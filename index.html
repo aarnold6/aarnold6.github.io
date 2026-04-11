@@ -162,7 +162,7 @@
 
     /* Location line under provider name */
     .hero-location {
-      font-size: 0.72rem;
+      font-size: 0.75rem;
       font-weight: 500;
       letter-spacing: 0.18em;
       text-transform: uppercase;
@@ -220,7 +220,7 @@
       align-items: center;
       gap: 0.4rem;
       color: var(--text-light);
-      font-size: 0.65rem;
+      font-size: 0.75rem;
       letter-spacing: 0.18em;
       text-transform: uppercase;
       opacity: 0;
@@ -629,7 +629,7 @@
       margin-bottom: 0.25rem;
     }
     .pricing-duration {
-      font-size: 0.7rem;
+      font-size: 0.75rem;
       font-weight: 500;
       letter-spacing: 0.1em;
       text-transform: uppercase;
@@ -823,6 +823,8 @@
 </head>
 <body>
 
+  <a href="#home" class="skip-link">Skip to main content</a>
+
   <!-- ===================================================
        NAVIGATION BAR
        Fixed at top. Becomes solid on scroll.
@@ -845,7 +847,7 @@
     </ul>
 
     <!-- Hamburger button — only visible on mobile -->
-    <button class="nav-toggle" id="nav-toggle" aria-label="Open menu">
+    <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
       <span></span><span></span><span></span>
     </button>
   </nav>
@@ -976,15 +978,15 @@
       </p>
 
       <!-- Tab navigation -->
-      <div class="tabs-nav reveal">
-        <button class="tab-btn active" data-tab="infants">🌱 Infants</button>
-        <button class="tab-btn"        data-tab="children">🌿 Children</button>
-        <button class="tab-btn"        data-tab="adults">🌳 Adults</button>
-        <button class="tab-btn"        data-tab="women">✦ Women</button>
+      <div class="tabs-nav reveal" role="tablist" aria-label="Who Can Benefit">
+        <button class="tab-btn active" data-tab="infants"  role="tab" id="tab-btn-infants"  aria-selected="true"  aria-controls="tab-infants">🌱 Infants</button>
+        <button class="tab-btn"        data-tab="children" role="tab" id="tab-btn-children" aria-selected="false" aria-controls="tab-children">🌿 Children</button>
+        <button class="tab-btn"        data-tab="adults"   role="tab" id="tab-btn-adults"   aria-selected="false" aria-controls="tab-adults">🌳 Adults</button>
+        <button class="tab-btn"        data-tab="women"    role="tab" id="tab-btn-women"    aria-selected="false" aria-controls="tab-women">✦ Women</button>
       </div>
 
       <!-- ─── Tab: Infants ─────────────────────── -->
-      <div class="tab-panel active" id="tab-infants">
+      <div class="tab-panel active" id="tab-infants" role="tabpanel" aria-labelledby="tab-btn-infants" tabindex="0">
         <div class="tab-layout">
           <div class="tab-text">
             <p class="tab-label">Newborns &amp; Infants</p>
@@ -1017,7 +1019,7 @@
       </div>
 
       <!-- ─── Tab: Children ───────────────────── -->
-      <div class="tab-panel" id="tab-children">
+      <div class="tab-panel" id="tab-children" role="tabpanel" aria-labelledby="tab-btn-children" tabindex="0">
         <div class="tab-layout">
           <div class="tab-text">
             <p class="tab-label">Toddlers &amp; School-Age Children</p>
@@ -1052,7 +1054,7 @@
       </div>
 
       <!-- ─── Tab: Adults ─────────────────────── -->
-      <div class="tab-panel" id="tab-adults">
+      <div class="tab-panel" id="tab-adults" role="tabpanel" aria-labelledby="tab-btn-adults" tabindex="0">
         <div class="tab-layout">
           <div class="tab-text">
             <p class="tab-label">Adults of All Ages</p>
@@ -1086,7 +1088,7 @@
       </div>
 
       <!-- ─── Tab: Women ──────────────────────── -->
-      <div class="tab-panel" id="tab-women">
+      <div class="tab-panel" id="tab-women" role="tabpanel" aria-labelledby="tab-btn-women" tabindex="0">
         <div class="tab-layout">
           <div class="tab-text">
             <p class="tab-label">Women's Health</p>
@@ -1417,10 +1419,14 @@
         const targetId = btn.dataset.tab;
 
         // Deactivate all, then activate clicked
-        tabBtns.forEach(b => b.classList.remove('active'));
+        tabBtns.forEach(b => {
+          b.classList.remove('active');
+          b.setAttribute('aria-selected', 'false');
+        });
         tabPanels.forEach(p => p.classList.remove('active'));
 
         btn.classList.add('active');
+        btn.setAttribute('aria-selected', 'true');
         document.getElementById('tab-' + targetId).classList.add('active');
       });
     });
