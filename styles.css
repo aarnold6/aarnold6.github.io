@@ -22,7 +22,7 @@
   --shadow-sm:   0 2px 16px rgba(61, 143, 168, 0.10);
   --shadow-md:   0 6px 32px rgba(61, 143, 168, 0.14);
   --shadow-lg:   0 16px 56px rgba(61, 143, 168, 0.18);
-  --radius:      4px;
+  --radius:      10px;
 }
 
 
