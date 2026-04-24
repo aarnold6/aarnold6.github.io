@@ -75,7 +75,7 @@ nav.scrolled {
   text-decoration: none;
   white-space: nowrap;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 0.5rem;
 }
 
@@ -420,8 +420,8 @@ footer {
 }
 
 .footer-brand img {
-  height: 60px;
-  width: 60px;
+  height: 80px;
+  width: 80px;
   border-radius: 50%;
   margin-bottom: 0.75rem;
   display: block;
